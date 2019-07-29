@@ -5,12 +5,20 @@
     <style>
       :host {
         display: block;
+        --form-task-primary-color: var(--primary-color, #3f51b5);
+        --form-task-secundary-color: var(--secundary-color, #ffffff);
+        --form-task-input-height: var(--input-height, 35px);
+        --form-task-font-size: var(--font-size, 15px);
+        --form-task-font-weight: var(--font-weight, 300)
       }
 
       .task-form {
+        font-size: var(--form-task-font-size);
+        font-weight: var(--form-task-font-weight);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        @apply --task-form;
       }
 
       .task-button {
@@ -18,24 +26,26 @@
         max-width: 75px;
         height: 38px;
         border-radius: 4px;
-        background-color: #3f51b5;
-        color: white;
+        background-color: var(--form-task-primary-color);
+        color: var(--form-task-secundary-color);
         border: 1px solid #ccc;
         cursor: pointer;
+        @apply --task-button;
       }
 
       .task-input {
         border: 1px solid #ccc;
-        height: 35px;
+        height: var(--form-task-input-height);
         width: 100%;
         margin: 5px 0px;
         border-radius: 4px;
         font-size: 20px;
+        @apply task-input;
       }
 
       .task-input:focus {
         outline: none;
-        border: 3px solid #3f51b5;
+        border: 3px solid var(--form-task-primary-color);
       }
 
       .task-button:hover {
