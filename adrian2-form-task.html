@@ -1,0 +1,29 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="adrian2-form-task">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+    <h2>I'm Adrian</h2>
+  </template>
+
+  <script>
+    class Adrian2FormTask extends Polymer.Element {
+      static get is() { return 'adrian2-form-task'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'adrian2-form-task'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(Adrian2FormTask.is, Adrian2FormTask);
+  </script>
+</dom-module>
