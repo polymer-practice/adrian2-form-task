@@ -67,10 +67,10 @@
     </style>
     <form class="task-form">
       <label for="task-name" class="input-label">
-        Task description
+        [[taskLabel]]
       </label>
-      <input type="text" name="task-name" class="task-input">
-      <button type="button" class="task-button">Save task</button>
+      <input type="text" name="task-name" class="task-input" placeholder="[[inputPlaceHolder]]">
+      <button type="button" class="task-button">[[buttonText]]</button>
     </form>
   </template>
 
@@ -79,9 +79,17 @@
       static get is() { return 'adrian2-form-task'; }
       static get properties() {
         return {
-          prop1: {
+          taskLabel: {
             type: String,
-            value: 'adrian2-form-task'
+            value: 'Name of the task'
+          },
+          buttonText: {
+            type:  String,
+            value: 'Save task'
+          },
+          inputPlaceHolder: {
+            type: String,
+            value: 'Write your new task'
           }
         };
       }
