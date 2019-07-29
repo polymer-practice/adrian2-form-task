@@ -65,12 +65,12 @@
 
 
     </style>
-    <form class="task-form">
+    <form class="task-form" on-submit="onSubmit">
       <label for="task-name" class="input-label">
         [[taskLabel]]
       </label>
       <input type="text" name="task-name" class="task-input" placeholder="[[inputPlaceHolder]]">
-      <button type="button" class="task-button">[[buttonText]]</button>
+      <button type="submit" class="task-button">[[buttonText]]</button>
     </form>
   </template>
 
@@ -92,6 +92,21 @@
             value: 'Write your new task'
           }
         };
+      }
+
+      onSubmit(event) {
+        event.preventDefault();
+        const myEvent = new CustomEvent(
+          'add-task',
+          {
+            bubbles: true,
+            composed: true,
+            detail: {
+              nameTask: 'Nueva tarea'
+            }
+          }
+        );
+        this.dispatchEvent(myEvent);
       }
     }
 

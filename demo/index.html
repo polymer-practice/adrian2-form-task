@@ -27,8 +27,15 @@
           button-text="Guardar"
           input-place-holder="Escribe tu nueva tarea"
           class="my-element"
+          id="form-task"
           ></adrian2-form-task>
         </template>
+        <script>
+          const formTask = document.getElementById('form-task');
+          formTask.addEventListener('add-task', (event) => {
+            console.log(event.detail);
+          });
+        </script>
       </demo-snippet>
     </div>
   </body>
