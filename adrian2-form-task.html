@@ -69,7 +69,9 @@
       <label for="task-name" class="input-label">
         [[taskLabel]]
       </label>
-      <input type="text" name="task-name" class="task-input" placeholder="[[inputPlaceHolder]]">
+      <input
+      value="{{inputValue::input}}"
+      type="text" name="task-name" class="task-input" placeholder="[[inputPlaceHolder]]">
       <button type="submit" class="task-button">[[buttonText]]</button>
     </form>
   </template>
@@ -90,7 +92,8 @@
           inputPlaceHolder: {
             type: String,
             value: 'Write your new task'
-          }
+          },
+          inputValue: String
         };
       }
 
@@ -102,7 +105,7 @@
             bubbles: true,
             composed: true,
             detail: {
-              nameTask: 'Nueva tarea'
+              nameTask: this.inputValue
             }
           }
         );
